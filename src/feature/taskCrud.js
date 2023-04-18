@@ -21,7 +21,10 @@ const deleteTask = (id, setAllTasks) => {
 
 const clearTrash = (setAllTasks) => {
     setAllTasks((prevState) => {
-        return prevState.filter((task) => task.status !== "trash");
+        // return prevState.filter((task) => task.status !== "trash");
+        const fTask = prevState.filter((task) => task.status !== "trash");
+        LocalStorage.saveAllTasks(fTask);
+        return fTask;
     });
 };
 
