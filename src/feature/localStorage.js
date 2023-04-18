@@ -4,8 +4,9 @@ const saveAllTasks = (data) => {
 };
 
 const loadAllTasks = () => {
-    const storedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
-    return storedTasks;
+    // const storedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+    // return storedTasks;
+    return JSON.parse(localStorage.getItem("all_tasks"));
 };
 
 export default {

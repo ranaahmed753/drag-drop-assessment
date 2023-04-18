@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import localStorage from "./feature/localStorage";
+import LocalStorage from "./feature/localStorage";
 import "./App.css";
 import CreateTask from "./components/CreateTask";
 import taskUtils from "./feature/taskUtils";
@@ -9,13 +9,13 @@ function App() {
     const [allTasks, setAllTasks] = useState([]);
 
     useEffect(() => {
-        const storedTasks = localStorage.loadAllTasks();
+        const storedTasks = LocalStorage.loadAllTasks();
         setAllTasks(storedTasks);
     }, []);
 
-    useEffect(() => {
-        localStorage.saveAllTasks(allTasks);
-    }, [allTasks]);
+    // useEffect(() => {
+    //     LocalStorage.saveAllTasks(allTasks);
+    // }, [allTasks]);
 
     const { noCatTasks, doingTasks, doneTasks, trashTasks } =
         taskUtils.categorizeTasks(allTasks);
