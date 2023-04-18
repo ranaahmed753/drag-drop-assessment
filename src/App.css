@@ -1,38 +1,135 @@
 .App {
-  text-align: center;
+    width: 100%;
+    max-width: 1280px;
+    margin-top: 4rem;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.createTask-container {
+    display: flex;
+    justify-content: center;
+    height: 6rem;
+    width: 100%;
+    padding: 1.5rem 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.createTask-input {
+    display: block;
+    width: 100%;
+    max-width: 32rem;
+    padding: 0rem 1rem;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid rgb(209 213 219 / 1);
+    background-color: rgb(249 250 251/1);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    tab-size: 4;
+    -webkit-font-smoothing: antialiased;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.createTask-btn {
+    background-color: #7f9163;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: rgb(255 255 255 / 1);
+    transition: all 250ms;
+    cursor: pointer;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none;
 }
 
-.App-link {
-  color: #61dafb;
+.createTask-btn:hover,
+.createTask-btn:focus {
+    background-color: #5e6e43;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.createTask-btn:active {
+    background-color: #c2ccb2;
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    transform: translateY(0);
+}
+
+.lists-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+}
+
+.tasklist-container {
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+    border-radius: 4px;
+}
+
+.tasklist-container:nth-child(1) {
+    background-color: #d2aedb;
+    color: #8f5c9b;
+}
+
+.tasklist-container:nth-child(2) {
+    background-color: #b8aada;
+    color: #785fb3;
+}
+
+.tasklist-container:nth-child(3) {
+    background-color: #e3d0bd;
+    color: #b8814b;
+}
+
+.tasklist-container:nth-child(4) {
+    background-color: #e5bbca;
+    color: #b96381;
+}
+
+.tasklist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.tasklist-title {
+    margin-inline: 0.8rem;
+}
+
+.tasklist-list {
+    margin-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.task-container {
+    padding: 1rem 2rem;
+    border-radius: 2px;
+    cursor: grab;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    position: relative;
+    z-index: 20;
+}
+
+.task-container:active {
+    cursor: grabbing;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.task-text {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

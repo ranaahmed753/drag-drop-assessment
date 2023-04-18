@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import localStorage from "./feature/localStorage";
+import "./App.css";
+import CreateTask from "./components/CreateTask";
+import taskUtils from "./feature/taskUtils";
+import TaskList from "./components/TaskList";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [allTasks, setAllTasks] = useState([]);
+
+    useEffect(() => {
+        const storedTasks = localStorage.loadAllTasks();
+        setAllTasks(storedTasks);
+    }, []);
+
+    useEffect(() => {
+        localStorage.saveAllTasks(allTasks);
+    }, [allTasks]);
+
+    const { noCatTasks, doingTasks, doneTasks, trashTasks } =
+        taskUtils.categorizeTasks(allTasks);
+
+    return (
+        <div className="App">
+            <CreateTask setAllTasks={setAllTasks} />
+            <div className="lists-container">
+                <TaskList
+                    category="Todo"
+                    tasks={noCatTasks}
+                    setAllTasks={setAllTasks}
+                />
+                <TaskList
+                    category="Doing"
+                    tasks={doingTasks}
+                    setAllTasks={setAllTasks}
+                />
+                <TaskList
+                    category="Done"
+                    tasks={doneTasks}
+                    setAllTasks={setAllTasks}
+                />
+                <TaskList
+                    category="Trash"
+                    tasks={trashTasks}
+                    setAllTasks={setAllTasks}
+                />
+            </div>
+        </div>
+    );
 }
 
 export default App;
