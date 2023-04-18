@@ -13,10 +13,6 @@ function App() {
         setAllTasks(storedTasks);
     }, []);
 
-    // useEffect(() => {
-    //     LocalStorage.saveAllTasks(allTasks);
-    // }, [allTasks]);
-
     const { noCatTasks, doingTasks, doneTasks, trashTasks } =
         taskUtils.categorizeTasks(allTasks);
 

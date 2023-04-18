@@ -5,7 +5,7 @@ const addTask = (text, setAllTasks) => {
         text: text,
         status: "",
     };
-    // setAllTasks((prevState) => [...prevState, newTask]);
+
     setAllTasks((prevState) => {
         let list = [...prevState, newTask];
         LocalStorage.saveAllTasks(list);
@@ -21,7 +21,6 @@ const deleteTask = (id, setAllTasks) => {
 
 const clearTrash = (setAllTasks) => {
     setAllTasks((prevState) => {
-        // return prevState.filter((task) => task.status !== "trash");
         const fTask = prevState.filter((task) => task.status !== "trash");
         LocalStorage.saveAllTasks(fTask);
         return fTask;
@@ -30,14 +29,6 @@ const clearTrash = (setAllTasks) => {
 
 const updateTask = (id, update, setAllTasks) => {
     setAllTasks((prevState) => {
-        // return prevState.map((task) => {
-        //     if (task.id === id) {
-        //         return { ...task, ...update };
-        //     } else {
-        //         return task;
-        //     }
-        // });
-
         const mTask = prevState.map((t) => {
             if (t.id === id) {
                 return { ...t, ...update };

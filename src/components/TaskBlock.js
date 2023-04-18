@@ -2,7 +2,7 @@ import React from "react";
 import dragDrop from "../feature/dragDrop";
 
 export default function TaskBlock({ task }) {
-    const { id, text, status } = task;
+    const { id, text } = task;
     return (
         <div
             draggable={true}
