@@ -12,6 +12,11 @@ const categorizeTasks = (allTasks) => {
     };
 };
 
-export default {
+const taskUtils = {
     categorizeTasks,
 };
+
+export default taskUtils;
+// export default {
+//     categorizeTasks,
+// };

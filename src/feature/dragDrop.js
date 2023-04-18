@@ -19,9 +19,10 @@ const handleDrop = (event, setAllTasks, category) => {
         setAllTasks
     );
 };
-
-export default {
+const dragDrop = {
     handleDragStart,
     handleDragOver,
     handleDrop,
 };
+export default dragDrop;
+// export default { handleDragStart, handleDragOver, handleDrop };

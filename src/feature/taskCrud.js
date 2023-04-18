@@ -40,9 +40,17 @@ const updateTask = (id, update, setAllTasks) => {
     });
 };
 
-export default {
+const taskCrud = {
     addTask,
     deleteTask,
     clearTrash,
     updateTask,
 };
+
+export default taskCrud;
+// export default {
+//     addTask,
+//     deleteTask,
+//     clearTrash,
+//     updateTask,
+// };

@@ -9,7 +9,12 @@ const loadAllTasks = () => {
     // return JSON.parse(localStorage.getItem("all_tasks"));
 };
 
-export default {
+const LocalStorage = {
     saveAllTasks,
     loadAllTasks,
 };
+export default LocalStorage;
+// export default {
+//     saveAllTasks,
+//     loadAllTasks,
+// };
